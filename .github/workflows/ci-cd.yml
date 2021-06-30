@@ -5,9 +5,8 @@ on: [ push, pull_request, workflow_dispatch ]
 jobs:
   ci:
     name: Continuous Integration
-    runs-on: windows-latest
-    env:
-      ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -15,12 +14,16 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Restore Dependencies
-        shell: pwsh
-        run: |
-          ./init.ps1
+      - name: Initialize CodeQL
+        id: init_codeql
+        uses: github/codeql-action/init@v1
+        with:
+          queries: security-and-quality
 
-      - name: Build solution
-        shell: pwsh
-        run: |
-          dotnet build PortabilityTools.sln /p:DeployExtension=False
+      - name: Autobuild
+        id: auto_build 
+        uses: github/codeql-action/autobuild@v1
+
+      - name: Perform CodeQL Analysis
+        id: analyze_codeql
+        uses: github/codeql-action/analyze@v1
