@@ -23,4 +23,4 @@ jobs:
       - name: Build solution
         shell: pwsh
         run: |
-          dotnet build PortabilityTools.sln
+          dotnet build PortabilityTools.sln /p:DeployExtension=False
