@@ -1,0 +1,24 @@
+name: CI Pipeline
+
+on: [ push, pull_request, workflow_dispatch ]
+
+jobs:
+  ci:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Restore Dependencies
+        shell: pwsh
+        run: |
+          ./init.ps1
+
+      - name: Build solution
+        shell: pwsh
+        run: |
+          dotnet build PortabilityTools.sln
