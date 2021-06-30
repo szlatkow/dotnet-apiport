@@ -6,6 +6,8 @@ jobs:
   ci:
     name: Continuous Integration
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -17,8 +19,6 @@ jobs:
         shell: pwsh
         run: |
           ./init.ps1
-        env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
       - name: Build solution
         shell: pwsh
