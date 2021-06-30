@@ -17,6 +17,8 @@ jobs:
         shell: pwsh
         run: |
           ./init.ps1
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
       - name: Build solution
         shell: pwsh
