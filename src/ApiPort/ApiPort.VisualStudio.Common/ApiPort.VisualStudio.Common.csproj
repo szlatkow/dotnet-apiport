@@ -17,7 +17,7 @@
   <ItemGroup>
     <PackageReference Include="EnvDTE100" Version="10.0.1" />
     <PackageReference Include="Microsoft.Build" Version="15.6.85" />
-    <PackageReference Include="Microsoft.VisualStudio.ComponentModelHost" Version="15.4.27004" />
+    <PackageReference Include="Microsoft.VisualStudio.ComponentModelHost" Version="16.10.230" />
     <PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="15.4.27004" />
     <PackageReference Include="Microsoft.VisualStudio.Threading" Version="15.4.4" />
     <PackageReference Include="NuGet.VisualStudio" Version="4.4.0">
