@@ -23,7 +23,7 @@
     <PackageReference Include="Microsoft.NETCore.ILAsm" Version="2.0.5" />
     <!--Reference to Microsoft.NETCore.Platforms to workaround https://github.com/dotnet/cli/issues/12341. Remove the reference once build machine moves to .NET Core 3.0-->
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.0.0" />
-    <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="15.5.0" />
+    <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="17.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NSubstitute" Version="3.1.0" />
     <PackageReference Include="System.Collections.Immutable" Version="1.4.0" />
